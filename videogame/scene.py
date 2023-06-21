@@ -97,6 +97,12 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         # TODO: Have the super/parent class initialized
         # TODO: Ask pygame for the default font at title_size size. Use the font to render the string title and assign this to an instance variable named self._title in the color title_color.
         # TODO: Ask pygame for the default font at 18 point size. Use the font to render the string 'Press any key.' in the color black. Assign the rendered text to an instance variable named self._press_any_key.
+        super().__init__(screen, background_color, soundtrack)
+        self._title_font = pygame.font.Font(None, title_size)
+        self._title_text = self._title_font.render(title, True, title_color)
+        self._title_position = self._title_text.get_rect(center=screen.get_rect().center)
+
+
 
     def draw(self):
         """Draw the scene."""
@@ -105,3 +111,5 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         # TODO: Draw a 100 pixel by 100 pixel rectangle that has it's center located 100 pixels below the center of the window.
         # TODO: Blit the title text to the center of the window.
         # TODO: Blit the press any key message to the bottom of the window. The text should be centered horizontally and be 50 pixels above the bottom edge of the window.
+        super().draw()
+        self._screen.blit(self._title_text, self._title_position)
