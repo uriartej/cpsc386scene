@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# Juan Uriarte
+# uriarte.juan@csu.fullerton.edu
+# @uriartej
+
 """A list of RGB colors produced by X11's showrgb command. The color database
     is probably from an IRIX system circa 2005"""
 
